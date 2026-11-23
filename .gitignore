@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment and secrets (Strictly prevent secret leakage)
+.env
+.env.*
+*.env
+!.env.example
+
+# SQLite Databases & Local Storage
+*.db
+*.sqlite
+*.sqlite3
+data/
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Testing, Mocks & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+.tox/
+.nox/
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System temporary files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Logs and runtime artifacts
+*.log
+logs/
+*.pid
+
+# Temporary and build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
