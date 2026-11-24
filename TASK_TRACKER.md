@@ -8,9 +8,9 @@ This document is the master project execution checklist for **AUTOHEAL**. It bre
 
 | Phase | Description | Total Tasks | Completed | In Progress | Pending | Status |
 |---|---|---|---|---|---|---|
-| **Phase 0** | Project Planning and Documentation | 10 | 1 | 9 | 0 | IN PROGRESS |
-| **Phase 1** | Development Environment Setup | 11 | 0 | 0 | 11 | TODO |
-| **Phase 2** | Docker Fundamentals and Integration | 9 | 0 | 0 | 9 | TODO |
+| **Phase 0** | Project Planning and Documentation | 10 | 10 | 0 | 0 | DONE |
+| **Phase 1** | Development Environment Setup | 11 | 11 | 0 | 0 | DONE |
+| **Phase 2** | Docker Fundamentals and Integration | 9 | 0 | 0 | 9 | IN PROGRESS |
 | **Phase 3** | Monitoring System | 9 | 0 | 0 | 9 | TODO |
 | **Phase 4** | Incident Detection Engine | 10 | 0 | 0 | 10 | TODO |
 | **Phase 5** | Gemini Integration and Diagnoser | 10 | 0 | 0 | 10 | TODO |
@@ -23,7 +23,7 @@ This document is the master project execution checklist for **AUTOHEAL**. It bre
 | **Phase 12** | Streamlit Dashboard & Visualizations | 9 | 0 | 0 | 9 | TODO |
 | **Phase 13** | Integration and End-to-End Testing | 14 | 0 | 0 | 14 | TODO |
 | **Phase 14** | Evaluation, Benchmarking & Documentation | 9 | 0 | 0 | 9 | TODO |
-| **TOTAL** | **All 15 Phases** | **141** | **1** | **9** | **131** | **0.7% Done** |
+| **TOTAL** | **All 15 Phases** | **141** | **21** | **0** | **120** | **14.9% Done** |
 
 ---
 
@@ -31,16 +31,16 @@ This document is the master project execution checklist for **AUTOHEAL**. It bre
 
 | Task ID | Phase | Task | Description | Dependencies | Priority | Estimated Effort | Acceptance Criteria | Status | Notes |
 |---|---|---|---|---|---|---|---|---|---|
-| **SETUP-001** | Phase 0 | Initialize Project Repository & Git Rules | Create `.gitignore` to protect `.env`, secrets, `.venv`, and SQLite databases. | None | Critical | 30 mins | `.gitignore` exists and excludes secrets, DBs, and virtual environments. | DONE | Done in turn 1 |
-| **SETUP-002** | Phase 0 | Create Environment Template (`.env.example`) | Create `.env.example` with placeholders for `GEMINI_API_KEY`, `DRY_RUN=true`, and limits. | None | Critical | 20 mins | `.env.example` contains placeholders with no real credentials. | IN_PROGRESS | Created, reviewing |
-| **SETUP-003** | Phase 0 | Create Project Structure Specification | Document directory tree, responsibilities, and structural invariants in `docs/PROJECT_STRUCTURE.md`. | SETUP-001 | High | 45 mins | `docs/PROJECT_STRUCTURE.md` exists and defines all module roles. | IN_PROGRESS | Created, reviewing |
-| **SETUP-004** | Phase 0 | Create Architectural Decision Records (ADRs) | Document confirmed technologies, rejected alternatives, and pending items in `docs/DECISIONS.md`. | None | High | 45 mins | `docs/DECISIONS.md` records all ADRs with rationales. | IN_PROGRESS | Created, reviewing |
-| **SETUP-005** | Phase 0 | Create Environment & Dependency Specification | Document verified installed runtimes and unverified target packages in `docs/ENVIRONMENT.md`. | None | High | 45 mins | Verified versions (Python 3.14.2, Docker 29.9.2, etc.) recorded accurately. | IN_PROGRESS | Created, reviewing |
-| **SETUP-006** | Phase 0 | Create Comprehensive Testing Plan | Detail 14 test scenarios with objectives, evidence, and expected outcomes in `docs/TESTING_PLAN.md`. | None | High | 1 hour | All 14 scenarios documented with clear pass/fail criteria. | IN_PROGRESS | Created, reviewing |
-| **SETUP-007** | Phase 0 | Create Progress Tracking Log | Initialize `progress.txt` reflecting Phase 0 status and zero completed application code. | None | Medium | 15 mins | `progress.txt` formatted per specification with accurate status. | IN_PROGRESS | Created, reviewing |
-| **SETUP-008** | Phase 0 | Create Definitive Project Context | Document full system scope, architecture, agent responsibilities, and metrics in `PROJECT_CONTEXT.md`. | SETUP-003, SETUP-004 | Critical | 1 hour | `PROJECT_CONTEXT.md` aligns with all architectural decisions. | IN_PROGRESS | Created, reviewing |
-| **SETUP-009** | Phase 0 | Create Public Project README | Draft comprehensive GitHub `README.md` with overview, architecture diagrams, and roadmap. | SETUP-008 | High | 45 mins | `README.md` complete, professional, and marks setup as pending. | IN_PROGRESS | Created, reviewing |
-| **SETUP-010** | Phase 0 | Create Project Directory Skeleton | Create clean directory structure (`src/`, `tests/`, `test_environment/`, `docs/`) with placeholder files. | SETUP-003 | High | 30 mins | Directory tree matches `docs/PROJECT_STRUCTURE.md`. | IN_PROGRESS | Placeholder creation |
+| **SETUP-001** | Phase 0 | Initialize Project Repository & Git Rules | Create `.gitignore` to protect `.env`, secrets, `.venv`, and SQLite databases. | None | Critical | 30 mins | `.gitignore` exists and excludes secrets, DBs, and virtual environments. | DONE | Created & verified |
+| **SETUP-002** | Phase 0 | Create Environment Template (`.env.example`) | Create `.env.example` with placeholders for `GEMINI_API_KEY`, `DRY_RUN=true`, and limits. | None | Critical | 20 mins | `.env.example` contains placeholders with no real credentials. | DONE | Created & verified |
+| **SETUP-003** | Phase 0 | Create Project Structure Specification | Document directory tree, responsibilities, and structural invariants in `docs/PROJECT_STRUCTURE.md`. | SETUP-001 | High | 45 mins | `docs/PROJECT_STRUCTURE.md` exists and defines all module roles. | DONE | Created & verified |
+| **SETUP-004** | Phase 0 | Create Architectural Decision Records (ADRs) | Document confirmed technologies, rejected alternatives, and pending items in `docs/DECISIONS.md`. | None | High | 45 mins | `docs/DECISIONS.md` records all ADRs with rationales. | DONE | Created & verified |
+| **SETUP-005** | Phase 0 | Create Environment & Dependency Specification | Document verified installed runtimes and unverified target packages in `docs/ENVIRONMENT.md`. | None | High | 45 mins | Verified versions (Python 3.14.2, Docker 29.9.2, etc.) recorded accurately. | DONE | Created & verified |
+| **SETUP-006** | Phase 0 | Create Comprehensive Testing Plan | Detail 14 test scenarios with objectives, evidence, and expected outcomes in `docs/TESTING_PLAN.md`. | None | High | 1 hour | All 14 scenarios documented with clear pass/fail criteria. | DONE | Created & verified |
+| **SETUP-007** | Phase 0 | Create Progress Tracking Log | Initialize `progress.txt` reflecting Phase 0 status and zero completed application code. | None | Medium | 15 mins | `progress.txt` formatted per specification with accurate status. | DONE | Created & verified |
+| **SETUP-008** | Phase 0 | Create Definitive Project Context | Document full system scope, architecture, agent responsibilities, and metrics in `PROJECT_CONTEXT.md`. | SETUP-003, SETUP-004 | Critical | 1 hour | `PROJECT_CONTEXT.md` aligns with all architectural decisions. | DONE | Created & verified |
+| **SETUP-009** | Phase 0 | Create Public Project README | Draft comprehensive GitHub `README.md` with overview, architecture diagrams, and roadmap. | SETUP-008 | High | 45 mins | `README.md` complete, professional, and marks setup as pending. | DONE | Created & verified |
+| **SETUP-010** | Phase 0 | Create Project Directory Skeleton | Create clean directory structure (`src/`, `tests/`, `test_environment/`, `docs/`) with placeholder files. | SETUP-003 | High | 30 mins | Directory tree matches `docs/PROJECT_STRUCTURE.md`. | DONE | Skeleton established |
 
 ---
 
@@ -48,17 +48,17 @@ This document is the master project execution checklist for **AUTOHEAL**. It bre
 
 | Task ID | Phase | Task | Description | Dependencies | Priority | Estimated Effort | Acceptance Criteria | Status | Notes |
 |---|---|---|---|---|---|---|---|---|---|
-| **ENV-001** | Phase 1 | Verify Host Core Runtimes | Confirm Python 3.14.2, Docker Engine 29.9.2, Docker Compose v5.6.1, and SQLite 3.50.4 via PowerShell. | Phase 0 | Critical | 20 mins | Terminal outputs match expected verified versions. | TODO | Pre-verified on host |
-| **ENV-002** | Phase 1 | Create Python Virtual Environment | Run `python -m venv .venv` in repository root to establish isolated environment. | ENV-001 | Critical | 15 mins | `.venv` directory created in `d:\AUTOHEAL\.venv`. | TODO | Isolate from host Python |
-| **ENV-003** | Phase 1 | Activate Virtual Environment & Upgrade Pip | Activate `.venv\Scripts\Activate.ps1` and run `python -m pip install --upgrade pip`. | ENV-002 | High | 15 mins | `sys.executable` points to `.venv` and pip is up-to-date. | TODO | Requires PS exec policy check |
-| **ENV-004** | Phase 1 | Install and Verify Utility Packages | Install `python-dotenv` and `pydantic`. Verify imports and versions in Python 3.14.2. | ENV-003 | High | 30 mins | `python -c "import dotenv, pydantic; print('OK')"` exits code 0. | TODO | Basic building blocks |
-| **ENV-005** | Phase 1 | Install and Verify Docker SDK for Python | Install `docker==7.2.0`. Verify import and test connection ping to Docker daemon. | ENV-004 | Critical | 30 mins | `client.ping()` returns `True` via Python in `.venv`. | TODO | Check Windows named pipe |
-| **ENV-006** | Phase 1 | Install and Verify Google GenAI SDK | Install `google-genai==3.6.1`. Verify import without compilation errors. | ENV-004 | Critical | 30 mins | `python -c "import google.genai; print('OK')"` exits code 0. | TODO | Test Gemini SDK import |
-| **ENV-007** | Phase 1 | Install and Verify LangGraph | Install `langgraph==1.2.24`. Verify import and basic graph instantiation. | ENV-004 | Critical | 45 mins | `from langgraph.graph import StateGraph` succeeds without error. | TODO | Check Python 3.14 wheels |
-| **ENV-008** | Phase 1 | Install and Verify Streamlit & Plotly | Install `streamlit==1.67.0` and `plotly==6.9.0`. Verify import and CLI execution. | ENV-004 | High | 45 mins | `streamlit --version` prints 1.67.0 and Plotly imports cleanly. | TODO | Check UI stack |
-| **ENV-009** | Phase 1 | Install and Verify Pytest | Install `pytest>=8.3.0`. Verify test runner runs against an empty test directory. | ENV-004 | Medium | 15 mins | `pytest` runs and outputs 0 errors / clean exit. | TODO | Test framework ready |
-| **ENV-010** | Phase 1 | Instantiate Local Configuration (`.env`) | Copy `.env.example` to `.env` and set local `DRY_RUN=true`. | ENV-004 | High | 15 mins | `.env` exists locally and is not tracked by Git (`git status`). | TODO | Never commit .env |
-| **ENV-011** | Phase 1 | Update Environment Status Documentation | Record actual installed package versions and verified dates in `docs/ENVIRONMENT.md`. | ENV-005 to ENV-009 | Medium | 20 mins | Table in `docs/ENVIRONMENT.md` populated with verified versions. | TODO | Maintain audit trail |
+| **ENV-001** | Phase 1 | Verify Host Core Runtimes | Confirm Python 3.14.2, Docker Engine 29.9.2, Docker Compose v5.6.1, and SQLite 3.50.4 via PowerShell. | Phase 0 | Critical | 20 mins | Terminal outputs match expected verified versions. | DONE | Python 3.14.2, Docker 29.9.2, Compose v5.6.1, SQLite 3.50.4 verified via PowerShell |
+| **ENV-002** | Phase 1 | Create Python Virtual Environment | Run `python -m venv .venv` in repository root to establish isolated environment. | ENV-001 | Critical | 15 mins | `.venv` directory created in `d:\AUTOHEAL\.venv`. | DONE | .venv created with Python 3.14.2 at D:\AUTOHEAL\.venv |
+| **ENV-003** | Phase 1 | Activate Virtual Environment & Upgrade Pip | Activate `.venv\Scripts\Activate.ps1` and run `python -m pip install --upgrade pip`. | ENV-002 | High | 15 mins | `sys.executable` points to `.venv` and pip is up-to-date. | DONE | pip 25.3 verified up-to-date in .venv |
+| **ENV-004** | Phase 1 | Install and Verify Utility Packages | Install `python-dotenv` and `pydantic`. Verify imports and versions in Python 3.14.2. | ENV-003 | High | 30 mins | `python -c "import dotenv, pydantic; print('OK')"` exits code 0. | DONE | Installed & verified: python-dotenv 1.2.4, pydantic 2.14.4 (pydantic-core 2.50.5) |
+| **ENV-005** | Phase 1 | Install and Verify Docker SDK for Python | Install `docker==7.2.0`. Verify import and test connection ping to Docker daemon. | ENV-004 | Critical | 30 mins | `client.ping()` returns `True` via Python in `.venv`. | DONE | docker 7.2.0 and pywin32-312 installed & verified in .venv |
+| **ENV-006** | Phase 1 | Install and Verify Google GenAI SDK | Install `google-genai==3.6.1`. Verify import without compilation errors. | ENV-004 | Critical | 30 mins | `python -c "import google.genai; print('OK')"` exits code 0. | DONE | google-genai 3.6.1 installed & client verified in .venv |
+| **ENV-007** | Phase 1 | Install and Verify LangGraph | Install `langgraph==1.2.24`. Verify import and basic graph instantiation. | ENV-004 | Critical | 45 mins | `from langgraph.graph import StateGraph` succeeds without error. | DONE | langgraph 1.2.24 installed & StateGraph verified in .venv |
+| **ENV-008** | Phase 1 | Install and Verify Streamlit & Plotly | Install `streamlit==1.67.0` and `plotly==6.9.0`. Verify import and CLI execution. | ENV-004 | High | 45 mins | `streamlit --version` prints 1.67.0 and Plotly imports cleanly. | DONE | streamlit 1.67.0 & plotly 7.1.0 installed & verified in .venv |
+| **ENV-009** | Phase 1 | Install and Verify Pytest | Install `pytest>=8.3.0`. Verify test runner runs against an empty test directory. | ENV-004 | Medium | 15 mins | `pytest` runs and outputs 0 errors / clean exit. | DONE | pytest 9.2.0 installed & verified in .venv |
+| **ENV-010** | Phase 1 | Instantiate Local Configuration (`.env`) | Copy `.env.example` to `.env` and set local `DRY_RUN=true`. | ENV-004 | High | 15 mins | `.env` exists locally and is not tracked by Git (`git status`). | DONE | .env instantiated & verified with python-dotenv |
+| **ENV-011** | Phase 1 | Update Environment Status Documentation | Record actual installed package versions and verified dates in `docs/ENVIRONMENT.md`. | ENV-005 to ENV-009 | Medium | 20 mins | Table in `docs/ENVIRONMENT.md` populated with verified versions. | DONE | docs/ENVIRONMENT.md updated & requirements.txt generated |
 
 ---
 

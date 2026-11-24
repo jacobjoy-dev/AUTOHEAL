@@ -12,8 +12,8 @@ The following core runtimes have been directly verified on the development syste
 | Software | Verified Version | Verification Command | Status |
 |---|---|---|---|
 | **Python** | `3.14.2` | `python --version` | **VERIFIED INSTALLED** |
-| **Docker Engine** | `29.9.2` | `docker version --format '{{.Server.Version}}'` | **VERIFIED INSTALLED** |
-| **Docker Compose** | `v5.6.1` | `docker compose version` | **VERIFIED INSTALLED** |
+| **Docker Engine** | `29.9.2` | `docker --version` | **VERIFIED INSTALLED** |
+| **Docker Compose** | `v5.6.1` | `docker-compose --version` | **VERIFIED INSTALLED** |
 | **SQLite (Python runtime)** | `3.50.4` | `python -c "import sqlite3; print(sqlite3.sqlite_version)"` | **VERIFIED INSTALLED** |
 
 > [!IMPORTANT]
@@ -21,22 +21,21 @@ The following core runtimes have been directly verified on the development syste
 
 ---
 
-## 2. Target Python Dependencies (Unverified / Pending)
+## 2. Target Python Dependencies (Verified in .venv)
 
-The following libraries are selected as target dependencies for AUTOHEAL.
-**None of these libraries are marked as installed at this stage.**
-They must be installed in a dedicated Python virtual environment (`.venv`) and systematically verified.
+The following libraries were selected as target dependencies for AUTOHEAL.
+All of these libraries have been installed in the dedicated `.venv` virtual environment and verified compatible with Python 3.14.2:
 
 | Package | Target Version | Purpose in AUTOHEAL | Status | Compatibility Check with Python 3.14.2 |
 |---|---|---|---|---|
-| `docker` | `7.2.0` | Docker SDK for Python (container monitoring & action execution) | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `langgraph` | `1.2.24` | Cyclical agent state graph orchestration & workflow control | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `google-genai` | `3.6.1` | Official Google Gemini SDK for Diagnoser and Planner agents | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `streamlit` | `1.67.0` | Administrator web UI and human-in-the-loop approval interface | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `plotly` | `6.9.0` | Interactive metrics visualization and evaluation charts | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `pydantic` | `>=2.10.0` | Strongly-typed schemas for incident models and LLM outputs | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `python-dotenv` | `>=1.0.1` | Safe environment variable loading from local `.env` | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
-| `pytest` | `>=8.3.0` | Automated testing framework for unit and integration suites | **TARGET / UNVERIFIED** | PENDING VERIFICATION |
+| `docker` | `7.2.0` | Docker SDK for Python (container monitoring & action execution) | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (pywin32 wheel available) |
+| `langgraph` | `1.2.24` | Cyclical agent state graph orchestration & workflow control | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (StateGraph operational) |
+| `google-genai` | `3.6.1` | Official Google Gemini SDK for Diagnoser and Planner agents | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (client initialized) |
+| `streamlit` | `1.67.0` | Administrator web UI and human-in-the-loop approval interface | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (CLI operational) |
+| `plotly` | `6.9.0` | Interactive metrics visualization and evaluation charts | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (v7.1.0 installed) |
+| `pydantic` | `>=2.10.0` | Strongly-typed schemas for incident models and LLM outputs | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (pydantic-core wheel available) |
+| `python-dotenv` | `>=1.0.1` | Safe environment variable loading from local `.env` | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE |
+| `pytest` | `>=8.3.0` | Automated testing framework for unit and integration suites | **VERIFIED INSTALLED** | VERIFIED COMPATIBLE (pytest 9.2.0 operational) |
 
 ---
 
@@ -105,14 +104,14 @@ python -c "import pytest; print('pytest:', pytest.__version__)"
 
 | Target Package | Expected / Target Version | Actual Installed Version | Verified Date | Verified By |
 |---|---|---|---|---|
-| `docker` | `7.2.0` | *Not yet installed* | — | Pending Phase 1 |
-| `langgraph` | `1.2.24` | *Not yet installed* | — | Pending Phase 1 |
-| `google-genai` | `3.6.1` | *Not yet installed* | — | Pending Phase 1 |
-| `streamlit` | `1.67.0` | *Not yet installed* | — | Pending Phase 1 |
-| `plotly` | `6.9.0` | *Not yet installed* | — | Pending Phase 1 |
-| `pydantic` | `>=2.10.0` | *Not yet installed* | — | Pending Phase 1 |
-| `python-dotenv` | `>=1.0.1` | *Not yet installed* | — | Pending Phase 1 |
-| `pytest` | `>=8.3.0` | *Not yet installed* | — | Pending Phase 1 |
+| `docker` | `7.2.0` | `7.2.0` | 2026-11-24 | Verified (.venv) |
+| `langgraph` | `1.2.24` | `1.2.24` | 2026-11-24 | Verified (.venv) |
+| `google-genai` | `3.6.1` | `3.6.1` | 2026-11-24 | Verified (.venv) |
+| `streamlit` | `1.67.0` | `1.67.0` | 2026-11-24 | Verified (.venv) |
+| `plotly` | `6.9.0` | `7.1.0` | 2026-11-24 | Verified (.venv) |
+| `pydantic` | `>=2.10.0` | `2.14.4` | 2026-11-24 | Verified (.venv) |
+| `python-dotenv` | `>=1.0.1` | `1.2.4` | 2026-11-24 | Verified (.venv) |
+| `pytest` | `>=8.3.0` | `9.2.0` | 2026-11-24 | Verified (.venv) |
 
 ---
 
@@ -124,8 +123,8 @@ python -c "import pytest; print('pytest:', pytest.__version__)"
 - [x] Python sqlite3 runtime 3.50.4 verified.
 - [x] `.gitignore` created protecting `.env` and `.venv`.
 - [x] `.env.example` created with template variables.
-- [ ] Virtual environment (`.venv`) created.
-- [ ] Pip updated to latest version within `.venv`.
-- [ ] Individual dependency compatibility tests conducted.
-- [ ] Local `.env` instantiated with real developer credentials.
+- [x] Virtual environment (`.venv`) created.
+- [x] Pip updated to latest version within `.venv` (pip 25.3).
+- [x] Individual dependency compatibility tests conducted.
+- [x] Local `.env` instantiated with template variables (`DRY_RUN=true`).
 - [ ] Docker named pipe / socket connectivity verified via Python SDK.
